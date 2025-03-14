@@ -8,7 +8,7 @@ public struct Account
     public double Amount;
 }
 
-public async Task Send(Account a, Account b, double amount)
+public void Send(Account a, Account b, double amount)
 {
     lock (a)
     {

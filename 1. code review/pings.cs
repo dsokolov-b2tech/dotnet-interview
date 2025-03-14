@@ -1,11 +1,11 @@
-internal class Ping
+internal struct Ping
 {
     public string Timestamp { get; set; }
     public string UserId { get; set; }
 }
 
 
-internal class MyCommunicator : IMyCommunicator
+internal class MyCommunicator
 {
     public static IMyDatabase MyClient { get; set; } =
       new MyDatabase(
@@ -24,7 +24,7 @@ internal class MyCommunicator : IMyCommunicator
         var request = "INSERT INTO pings VALUES (@pings)";
         var isFirst = true;
 
-        foreach (var ping in PingsCache.ToList())
+        foreach (var ping in PingsCache)
         {
             if (!isFirst)
             {
