@@ -21,7 +21,7 @@ internal class MyCommunicator
 
     public static void SendData()
     {
-        var request = "INSERT INTO pings VALUES (@pings)";
+        var request = "INSERT INTO pings VALUES ";
         var isFirst = true;
 
         foreach (var ping in PingsCache)
